@@ -1,0 +1,8 @@
+Feature: Bank-account
+
+Scenario: account statement
+    Given I make a deposit of 1000 on "26-05-2016"
+	And a deposit of 1500 on "27-05-2016"
+	And a withdrawal of 1200 on "28-05-2016"
+	When I print my bank statement
+	Then the line number 1 contains "26-05-2016", 1000, 0, 1000		 the line number 2 contains "27-05-2016", 1500, 0, 2500		 the line number 3 contains "28-05-2016", 0, 1200, 1300
